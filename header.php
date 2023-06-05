@@ -34,7 +34,7 @@
                     wp_nav_menu(array(
                         'theme_location' => 'edodo_main_menu',
                         'container' => false,
-                        'menu_class' => 'navbar-nav ms-auto',
+                        'menu_class' => 'navbar-nav ms-4',
                         'fallback_cb' => '__return_false',
                         'items_wrap' => '<ul id="%1$s" class="navbar-nav me-auto mb-2 mb-md-0 %2$s">%3$s</ul>',
                         'depth' => 2,
