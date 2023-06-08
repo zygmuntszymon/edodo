@@ -14,6 +14,7 @@ Text Domain: edodo
 
 :root {
     --main-color: #CA1551;
+    --secondary-color: #fff;
 }
 
 * {
@@ -44,8 +45,7 @@ body {
 /* HEADER */
 header {
     height: 80px;
-    border-bottom: 1px solid lightgray;
-    background-color: white;
+    background-color: var(--secondary-color);
     z-index: 999;
     position: static;
     top: 0;
@@ -71,7 +71,6 @@ header {
 }
 
 .navbar-collapse {
-    background-color: white;
     flex-grow: 1 !important;
 }
 
@@ -79,9 +78,11 @@ header {
     padding: 5px 25px;
     font-size: 15px;
     border-radius: 15px;
-    border: 1px solid black;
+    border: 1px solid var(--main-color);
     background-color: white;
     margin-left: 10px;
+    color: var(--main-color);
+    font-weight: 500;
 }
 
 .navbar-btn--2 {
@@ -92,6 +93,7 @@ header {
     background-color: var(--main-color);
     color: white;
     margin-left: 10px;
+    font-weight: 500;
 }
 
 
@@ -113,12 +115,53 @@ header {
     --bs-dropdown-border-radius: 0 !important;
     --bs-dropdown-min-width: fit-content !important;
     border-top: none !important;
+    background-color: var(--secondary-color);
+    -webkit-animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+    animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
 
 }
+
+.show {}
 
 .dropdown-item {
     text-align: right !important;
     font-size: 15px !important;
+}
+
+@-webkit-keyframes swing-in-top-fwd {
+    0% {
+        -webkit-transform: rotateX(-100deg);
+        transform: rotateX(-100deg);
+        -webkit-transform-origin: top;
+        transform-origin: top;
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: rotateX(0deg);
+        transform: rotateX(0deg);
+        -webkit-transform-origin: top;
+        transform-origin: top;
+        opacity: 1;
+    }
+}
+
+@keyframes swing-in-top-fwd {
+    0% {
+        -webkit-transform: rotateX(-100deg);
+        transform: rotateX(-100deg);
+        -webkit-transform-origin: top;
+        transform-origin: top;
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: rotateX(0deg);
+        transform: rotateX(0deg);
+        -webkit-transform-origin: top;
+        transform-origin: top;
+        opacity: 1;
+    }
 }
 
 @media screen and (max-width:992px) {
@@ -167,7 +210,14 @@ header {
         text-align: right !important;
         font-size: 18px !important;
     }
+}
 
+/*HERO SECTION*/
 
-
+.hero-section {
+    height: 500px;
+    background-image: url('./img/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
 }
